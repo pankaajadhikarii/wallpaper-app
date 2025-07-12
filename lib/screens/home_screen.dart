@@ -8,6 +8,15 @@ List category = [
   {"image": AssetImage("assets/girl.jpg"), "text": "Girl"},
 ];
 
+List gridDetails = [
+  {"image": AssetImage("assets/grid1.jpg")},
+  {"image": AssetImage("assets/grid2.jpg")},
+  {"image": AssetImage("assets/grid3.jpg")},
+  {"image": AssetImage("assets/grid4.jpg")},
+  {"image": AssetImage("assets/grid5.jpg")},
+  {"image": AssetImage("assets/grid6.jpg")},
+];
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -133,7 +142,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 15),
-              SlidingSegment()
+              SlidingSegment(),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 385,
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: gridDetails.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 0.6,
+                  ),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: gridDetails[index]["image"],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),

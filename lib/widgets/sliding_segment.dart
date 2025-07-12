@@ -14,7 +14,8 @@ class _SlidingSegmentState extends State<SlidingSegment> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      clipBehavior: Clip.hardEdge,
+      height: 48,
       width: 330,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
