@@ -2,4 +2,4 @@
 
 
 ## Screenshot
-![image](https://github.com/pankaajadhikarii/wallpaper-app/blob/main/assets/project-screenshot.jpeg?raw=true)
+![image](https://github.com/pankaajadhikarii/wallpaper-app/blob/main/assets/proj_screenshot.jpg?raw=true)
