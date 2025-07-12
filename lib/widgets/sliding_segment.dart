@@ -14,6 +14,12 @@ class _SlidingSegmentState extends State<SlidingSegment> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
+      // tyo SlidingSegment left rw right ma container ko radius,
+      // bhnad baira na jawos bhaneraw clipBehavior halea ko, it clips
+      // with the radius of the container
+      clipBehavior: Clip.hardEdge,
+
       height: 60,
       width: 330,
       decoration: BoxDecoration(
@@ -37,9 +43,22 @@ class _SlidingSegmentState extends State<SlidingSegment> {
           }
         },
         children: {
-          0: _buildSegment("Trending", Icons.local_fire_department),
-          1: _buildSegment("Recent", Icons.access_time),
-          2: _buildSegment("New", Icons.nature),
+
+        // Added padding to all the childrens so,
+        // it will cover the whole container,
+        // and maybe look nice and shit, idk?
+          0: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: _buildSegment("Trending", Icons.local_fire_department),
+            ),
+          1: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: _buildSegment("Recent", Icons.access_time),
+            ),
+          2: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: _buildSegment("New", Icons.nature),
+            ),
         },
       ),
     );
