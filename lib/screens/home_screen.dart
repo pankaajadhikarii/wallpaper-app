@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaper_app/screens/category_screen.dart';
 import 'package:wallpaper_app/widgets/sliding_segment.dart';
 
 List category = [
@@ -97,12 +98,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     "Category",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    "View All",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff0071E3),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => CategoryScreen()),
+                      );
+                    },
+                    child: Text(
+                      "View All",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff0071E3),
+                      ),
                     ),
                   ),
                 ],
@@ -145,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SlidingSegment(),
               SizedBox(height: 15),
               SizedBox(
-                height: 385,
+                height: 371,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: gridDetails.length,
